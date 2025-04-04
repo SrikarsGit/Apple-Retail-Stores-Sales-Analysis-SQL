@@ -88,10 +88,29 @@ The project is split into three tiers of business questions of increasing comple
 ### Medium to Hard (5 Questions)
 
 11. Identify the least selling product in each country for each year based on total units sold.
-12. Calculate how many warranty claims were filed within 180 days of a product sale.
-13. Determine how many warranty claims were filed for products launched in the last two years.
-14. List the months in the last three years where sales exceeded 5,000 units in the USA.
-15. Identify the product category with the most warranty claims filed in the last two years.
+```sql
+WITH product_rank AS (
+						SELECT 	st.country, 
+								p.product_name, 
+								EXTRACT(YEAR FROM s.sale_date) AS year, 
+								SUM(s.quantity) as total_units_sold,
+								RANK() OVER(PARTITION BY st.country, EXTRACT(YEAR FROM s.sale_date) ORDER BY SUM(s.quantity) ASC) AS rank
+						FROM	sales s INNER JOIN stores st
+											ON s.store_id = st.store_id
+										INNER JOIN products p
+											ON s.product_id = p.product_id
+						GROUP BY 1, 2, 3	
+					)
+
+
+SELECT 	country, year, product_name AS least_selling_product, total_units_sold
+FROM	product_rank
+WHERE 	rank = 1;
+```
+13. Calculate how many warranty claims were filed within 180 days of a product sale.
+14. Determine how many warranty claims were filed for products launched in the last two years.
+15. List the months in the last three years where sales exceeded 5,000 units in the USA.
+16. Identify the product category with the most warranty claims filed in the last two years.
 
 ### Complex (5 Questions)
 
