@@ -91,14 +91,14 @@ The project is split into three tiers of business questions of increasing comple
 ```sql
 WITH product_rank AS (
 			SELECT 	st.country, 
-					p.product_name, 
-					EXTRACT(YEAR FROM s.sale_date) AS year, 
-					SUM(s.quantity) as total_units_sold,
-					RANK() OVER(PARTITION BY st.country, EXTRACT(YEAR FROM s.sale_date) ORDER BY SUM(s.quantity) ASC) AS rank
+				p.product_name, 
+				EXTRACT(YEAR FROM s.sale_date) AS year, 
+				SUM(s.quantity) as total_units_sold,
+				RANK() OVER(PARTITION BY st.country, EXTRACT(YEAR FROM s.sale_date) ORDER BY SUM(s.quantity) ASC) AS rank
 			FROM	sales s INNER JOIN stores st
-								ON s.store_id = st.store_id
-							INNER JOIN products p
-								ON s.product_id = p.product_id
+ 						ON s.store_id = st.store_id
+				I	NNER JOIN products p
+						ON s.product_id = p.product_id
 			GROUP BY 1, 2, 3
 		)
 
@@ -119,15 +119,14 @@ WHERE 	rank = 1;
 ```sql
 WITH sales_by_stores AS (
 				SELECT 		s.store_id, 
-							st.store_name,
-							EXTRACT(YEAR FROM s.sale_date) as year,
-							SUM(s.quantity * p.price) AS total_sales_amount,
-							LAG(SUM(s.quantity * p.price)) OVER(PARTITION BY s.store_id ORDER BY EXTRACT(YEAR FROM s.sale_date)) as prev_year_sales
-							
+						st.store_name,
+						EXTRACT(YEAR FROM s.sale_date) as year,
+						SUM(s.quantity * p.price) AS total_sales_amount,
+						LAG(SUM(s.quantity * p.price)) OVER(PARTITION BY s.store_id ORDER BY EXTRACT(YEAR FROM s.sale_date)) as prev_year_sales
 				FROM		sales s INNER JOIN stores st
-										ON s.store_id = st.store_id
-									INNER JOIN	products p
-										ON s.product_id = p.product_id
+								ON s.store_id = st.store_id
+							INNER JOIN products p
+								ON s.product_id = p.product_id
 				GROUP BY 	1, 2, 3
 			)
 SELECT 	store_id, store_name, year, total_sales_amount,
