@@ -18,9 +18,8 @@ This project is designed to showcase advanced SQL querying techniques through th
 ![ERD](https://github.com/najirh/Apple-Retail-Sales-SQL-Project---Analyzing-Millions-of-Sales-Rows/blob/main/erd.png)
 
 This Entity Relationship Diagram (ERD) represents a retail sales database with five key tables:
-
-1 .Category: Stores product categories with category_id (Primary Key) and category_name.
-2. Products: Contains product details, including product_id (Primary Key), product_name, category_id (Foreign Key to Category), launch_date, and price
+1. Category: Stores product categories with category_id (Primary Key) and category_name.
+2. Products: Contains product details, including product_id (Primary Key), product_name, category_id (Foreign Key to Category), launch_date, and price.
 3. Sales: Records sales transactions with sale_id (Primary Key), sale_date, store_id (Foreign Key to Stores), product_id (Foreign Key to Products), and quantity.
 4. Stores: Holds store-related details with store_id (Primary Key), store_name, city, and country.
 5. Warranty: Tracks warranty claims with claim_id (Primary Key), claim_date, sale_id (Foreign Key to Sales), and repair_status.
