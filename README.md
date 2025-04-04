@@ -1,5 +1,5 @@
 
-# ![Apple Logo](https://images.unsplash.com/photo-1615725802642-936d9aade2ba?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) Apple Retail Sales SQL Project - Analyzing Millions of Sales Rows
+# ![Apple Logo](https://images.unsplash.com/photo-1615725802642-936d9aade2ba?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) Apple Retail Sales Analysis - An Advanced SQL Project Analyzing Millions of Sales Rows
 
 **Table Of Contents:**
 1. Project Overview
