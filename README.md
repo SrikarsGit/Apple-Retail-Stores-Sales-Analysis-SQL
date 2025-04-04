@@ -90,17 +90,17 @@ The project is split into three tiers of business questions of increasing comple
 11. Identify the least selling product in each country for each year based on total units sold.
 ```sql
 WITH product_rank AS (
-						SELECT 	st.country, 
-								p.product_name, 
-								EXTRACT(YEAR FROM s.sale_date) AS year, 
-								SUM(s.quantity) as total_units_sold,
-								RANK() OVER(PARTITION BY st.country, EXTRACT(YEAR FROM s.sale_date) ORDER BY SUM(s.quantity) ASC) AS rank
-						FROM	sales s INNER JOIN stores st
-											ON s.store_id = st.store_id
-										INNER JOIN products p
-											ON s.product_id = p.product_id
-						GROUP BY 1, 2, 3	
-					)
+			SELECT 	st.country, 
+					p.product_name, 
+					EXTRACT(YEAR FROM s.sale_date) AS year, 
+					SUM(s.quantity) as total_units_sold,
+					RANK() OVER(PARTITION BY st.country, EXTRACT(YEAR FROM s.sale_date) ORDER BY SUM(s.quantity) ASC) AS rank
+			FROM	sales s INNER JOIN stores st
+								ON s.store_id = st.store_id
+							INNER JOIN products p
+								ON s.product_id = p.product_id
+			GROUP BY 1, 2, 3
+		)
 
 
 SELECT 	country, year, product_name AS least_selling_product, total_units_sold
@@ -116,9 +116,27 @@ WHERE 	rank = 1;
 
 16. Determine the percentage chance of receiving warranty claims after each purchase for each country.
 17. Analyze the year-by-year growth ratio for each store.
-18. Calculate the correlation between product price and warranty claims for products sold in the last five years, segmented by price range.
-19. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.
-20. Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
+```sql
+WITH sales_by_stores AS (
+				SELECT 		s.store_id, 
+							st.store_name,
+							EXTRACT(YEAR FROM s.sale_date) as year,
+							SUM(s.quantity * p.price) AS total_sales_amount,
+							LAG(SUM(s.quantity * p.price)) OVER(PARTITION BY s.store_id ORDER BY EXTRACT(YEAR FROM s.sale_date)) as prev_year_sales
+							
+				FROM		sales s INNER JOIN stores st
+										ON s.store_id = st.store_id
+									INNER JOIN	products p
+										ON s.product_id = p.product_id
+				GROUP BY 	1, 2, 3
+			)
+SELECT 	store_id, store_name, year, total_sales_amount,
+		COALESCE(ROUND(((total_sales_amount - prev_year_sales)*100.0/prev_year_sales)::NUMERIC, 2), 0)AS year_by_year_growth_ratio
+FROM 	sales_by_stores;
+```
+19. Calculate the correlation between product price and warranty claims for products sold in the last five years, segmented by price range.
+20. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.
+21. Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
 
 
 ## Project Focus
