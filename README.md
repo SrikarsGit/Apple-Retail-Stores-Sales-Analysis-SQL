@@ -7,7 +7,8 @@
 3. Database Schema
 4. Key Business Problems Solved
 5. Skills Highlighted
-6. Query Optimization
+6. Dataset
+7. Conclusion
 
 ## Project Overview
 
@@ -157,7 +158,7 @@ This project primarily focuses on developing and showcasing the following SQL sk
 - **Geographical Coverage**: Sales data from Apple stores across various countries.
 
 ## Conclusion
-
-By completing this project, you will develop advanced SQL querying skills, improve your ability to handle large datasets, and gain practical experience in solving complex data analysis problems that are crucial for business decision-making. This project is an excellent addition to your portfolio and will demonstrate your expertise in SQL to potential employers.
+	
+Through this project, I’ve strengthened my SQL skills by solving real-world business problems using relational datasets. Working with multiple interconnected tables and thousands of records taught me how to write efficient and scalable queries that can handle large datasets without compromising performance. I learned to optimize queries using techniques like CTEs (WITH clauses), indexing strategies, and minimizing nested subqueries. This helped me process and analyze complex datasets more effectively. Overall, the project not only deepened my technical SQL knowledge but also sharpened my ability to think analytically and work with data at scale—key skills for any aspiring data analyst.
 
 ---
