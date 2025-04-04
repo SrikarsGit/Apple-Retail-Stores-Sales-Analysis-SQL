@@ -6,9 +6,10 @@
 2. Entity Relationship Diagram (ERD)
 3. Database Schema
 4. Key Business Problems Solved
-5. Skills Highlighted
-6. Dataset
-7. Conclusion
+5. Query Optimization
+7. Skills Highlighted
+8. Dataset
+9. Conclusion
 
 ## Project Overview
 
@@ -138,6 +139,27 @@ FROM 	sales_by_stores;
 20. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.
 21. Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
 
+## Query Optimization
+When working with large datasets, query performance becomes a key concern. As data grows, even simple queries can become slow and resource-intensive if not optimized properly. In this project, I implemented indexing strategies to improve query speed, especially on frequently queried columns like product_id, store_id, and sale_date.
+
+Here’s how indexing helped improve performance:
+Example: Filtering on product_id
+--Without Index:
+```sql
+EXPLAIN ANALYSE
+SELECT 	* 
+FROM 	sales
+WHERE	product_id = 'P-77';
+```
+Execution Time: ~75.853 ms
+The query performed a full table scan, checking every row for a match.
+
+--WITH INDEX:
+```sql
+CREATE INDEX sales_product_id ON sales(product_id);
+```
+Execution Time: ~4–8 ms
+The query used the index to directly locate relevant rows, drastically reducing lookup time.
 
 ## Skills Highlighted
 
