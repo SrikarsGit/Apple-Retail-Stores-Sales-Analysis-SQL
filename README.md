@@ -138,7 +138,7 @@ FROM 	sales_by_stores;
 21. Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
 
 
-## Project Focus
+## Skills Highlighted
 
 This project primarily focuses on developing and showcasing the following SQL skills:
 
@@ -147,6 +147,7 @@ This project primarily focuses on developing and showcasing the following SQL sk
 - **Data Segmentation**: Analyzing data across different time frames to gain insights into product performance.
 - **Correlation Analysis**: Applying SQL functions to determine relationships between variables, such as product price and warranty claims.
 - **Real-World Problem Solving**: Answering business-related questions that reflect real-world scenarios faced by data analysts.
+- **Query Optimization**: Writing efficient SQL queries by reducing nested subqueries, minimizing data scans, and leveraging indexes and WITH clauses effectively for performance.
 
 
 ## Dataset
