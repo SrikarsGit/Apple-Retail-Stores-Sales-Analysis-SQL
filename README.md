@@ -4,9 +4,10 @@
 **Table Of Contents:**
 1. Project Overview
 2. Entity Relationship Diagram (ERD)
-3. Skills Highlighted
-4. Key Business Questions Solved
-5. Query Optimization
+3. Database Schema
+4. Key Business Problems Solved
+5. Skills Highlighted
+6. Query Optimization
 
 ## Project Overview
 
@@ -17,29 +18,14 @@ This project is designed to showcase advanced SQL querying techniques through th
 
 ![ERD](https://github.com/najirh/Apple-Retail-Sales-SQL-Project---Analyzing-Millions-of-Sales-Rows/blob/main/erd.png)
 
-This Entity Relationship Diagram (ERD) represents a retail sales database with five key tables:
+This Entity Relationship Diagram (ERD) represents a retail sales database (AppleDB) with five key tables:
 1. Category: Stores product categories with category_id (Primary Key) and category_name.
 2. Products: Contains product details, including product_id (Primary Key), product_name, category_id (Foreign Key to Category), launch_date, and price.
 3. Sales: Records sales transactions with sale_id (Primary Key), sale_date, store_id (Foreign Key to Stores), product_id (Foreign Key to Products), and quantity.
 4. Stores: Holds store-related details with store_id (Primary Key), store_name, city, and country.
 5. Warranty: Tracks warranty claims with claim_id (Primary Key), claim_date, sale_id (Foreign Key to Sales), and repair_status.
 
----
 
-### What’s Included:
-- **100 SQL Practice Problems**: Extensive coverage of major SQL topics for mastering concepts with real-world data.
-- **20 Advanced SQL Queries**: Step-by-step solutions for complex queries, enhancing your skills in performance tuning and optimization.
-- **5 Detailed Tables**: Comprehensive datasets with over 1 million rows, including sales, stores, product categories, products, and warranties.
-- **Query Performance Tuning**: Learn to optimize queries for real-world data handling.
-- **Portfolio-Ready Project**: Showcase your SQL expertise through large-scale data analysis.
-
-### Why Choose This Project?
-- **Hands-on Learning**: Practical experience with complex datasets and advanced business problem-solving.
-- **Comprehensive Coverage**: Each table provides new opportunities to explore SQL concepts.
-- **Exceptional Value**: For just **$9**, access 100 SQL problems, 20 advanced query solutions, and a real-world project.
-- **Limited Offer**: Special price available for the **first 100 students**!
-
-**Get the guided project/datasets here**: [Get the Project Datasets](https://topmate.io/zero_analyst/1237072)
 
 ## Database Schema
 
@@ -75,9 +61,9 @@ The project uses five main tables:
    - `sale_id`: References the sales table.
    - `repair_status`: Status of the warranty claim (e.g., Paid Repaired, Warranty Void).
 
-## Objectives
+## Key Business Problems Solved
 
-The project is split into three tiers of questions to test SQL skills of increasing complexity:
+The project is split into three tiers of business questions of increasing complexity:
 
 ### Easy to Medium (10 Questions)
 
@@ -108,9 +94,6 @@ The project is split into three tiers of questions to test SQL skills of increas
 19. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.
 20. Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
 
-### Bonus Question
-
-- Analyze product sales trends over time, segmented into key periods: from launch to 6 months, 6-12 months, 12-18 months, and beyond 18 months.
 
 ## Project Focus
 
