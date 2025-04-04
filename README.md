@@ -76,13 +76,13 @@ The project is split into three tiers of business questions of increasing comple
 7. Count the number of unique products sold in the last year.
 8. Find the average price of products in each category.
 9. How many warranty claims were filed in 2020?
-    '''sql
+```sql
    SELECT 		c.category_name, ROUND(AVG(p.price)::NUMERIC, 2) AS avg_price
-FROM 		products p INNER JOIN category c
-			ON	p.category_id = c.category_id
-GROUP BY	c.category_name
-ORDER BY	avg_price DESC;
-   '''
+   FROM 		products p INNER JOIN category c
+			ON p.category_id = c.category_id
+   GROUP BY	        c.category_name
+   ORDER BY	        avg_price DESC;
+```
 11. For each store, identify the best-selling day based on highest quantity sold.
 
 ### Medium to Hard (5 Questions)
