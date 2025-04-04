@@ -1,7 +1,7 @@
 
 # ![Apple Logo](https://images.unsplash.com/photo-1615725802642-936d9aade2ba?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) Apple Retail Sales SQL Project - Analyzing Millions of Sales Rows
 
-Table Of Contents:
+**Table Of Contents:**
 1. Project Overview
 2. Entity Relationship Diagram (ERD)
 3. Skills Highlighted
@@ -10,17 +10,20 @@ Table Of Contents:
 
 ## Project Overview
 
-This project is designed to showcase advanced SQL querying techniques through the analysis of over 1 million rows of Apple retail sales data. The dataset includes information about products, stores, sales transactions, and warranty claims across various Apple retail locations globally. By tackling a variety of questions, from basic to complex, you'll demonstrate your ability to write sophisticated SQL queries that extract valuable insights from large datasets.
+This project is designed to showcase advanced SQL querying techniques through the analysis of over 1 million rows of Apple retail sales data. The dataset includes information about products, stores, sales transactions, and warranty claims across various Apple retail locations globally. This project demonstrates advanced SQL querying techniques on a dataset of over 1 million rows from Apple retail sales. It showcases a wide range of analytical and problem-solving skills, including optimizing query performance, solving real-world business problems, and extracting actionable insights from large datasets.
 
-The project is ideal for data analysts looking to enhance their SQL skills by working with a large-scale dataset and solving real-world business questions.
 
 ## Entity Relationship Diagram (ERD)
 
 ![ERD](https://github.com/najirh/Apple-Retail-Sales-SQL-Project---Analyzing-Millions-of-Sales-Rows/blob/main/erd.png)
 
-**Get the guided project/datasets here**: [Get the Project Datasets](https://topmate.io/zero_analyst/1237072)
+This Entity Relationship Diagram (ERD) represents a retail sales database with five key tables:
 
-Here’s the shortened and improved version of the "What’s Included" and "Why Choose This Project" sections, along with the link:
+1 .Category: Stores product categories with category_id (Primary Key) and category_name.
+2. Products: Contains product details, including product_id (Primary Key), product_name, category_id (Foreign Key to Category), launch_date, and price
+3. Sales: Records sales transactions with sale_id (Primary Key), sale_date, store_id (Foreign Key to Stores), product_id (Foreign Key to Products), and quantity.
+4. Stores: Holds store-related details with store_id (Primary Key), store_name, city, and country.
+5. Warranty: Tracks warranty claims with claim_id (Primary Key), claim_date, sale_id (Foreign Key to Sales), and repair_status.
 
 ---
 
