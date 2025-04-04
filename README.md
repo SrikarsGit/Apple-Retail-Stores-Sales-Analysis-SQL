@@ -152,6 +152,7 @@ FROM 	sales
 WHERE	product_id = 'P-77';
 ```
 Execution Time: ~75.853 ms
+
 The query performed a full table scan, checking every row for a match.
 
 --WITH INDEX:
@@ -159,7 +160,11 @@ The query performed a full table scan, checking every row for a match.
 CREATE INDEX sales_product_id ON sales(product_id);
 ```
 Execution Time: ~4–8 ms
+
 The query used the index to directly locate relevant rows, drastically reducing lookup time.
+
+
+In short, query optimization—especially using indexes—is essential for building high-performance, scalable data systems, and this project helped me put those principles into practice.
 
 ## Skills Highlighted
 
