@@ -2,14 +2,14 @@
 # ![Apple Logo](https://images.unsplash.com/photo-1615725802642-936d9aade2ba?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) Apple Retail Sales Analysis - An Advanced SQL Project Analyzing Millions of Sales Rows
 
 **Table Of Contents:**
-- [1. Project Overview](#1-project-overview)
-- [2. Entity Relationship Diagram (ERD)](#2-entity-relationship-diagram-erd)
-- [3. Database Schema](#3-database-schema)
-- [4. Key Business Problems Solved](#4-key-business-problems-solved)
-- [5. Query Optimization](#5-query-optimization)
-- [6. Skills Highlighted](#6-skills-highlighted)
-- [7. Dataset](#7-dataset)
-- [8. Conclusion](#8-conclusion)
+- 1. [Project Overview](#1-project-overview)
+- 2. [Entity Relationship Diagram (ERD)](#2-entity-relationship-diagram-erd)
+- 3. [Database Schema](#3-database-schema)
+- 4. [Key Business Problems Solved](#4-key-business-problems-solved)
+- 5. [Query Optimization](#5-query-optimization)
+- 6. [Skills Highlighted](#6-skills-highlighted)
+- 7. [Dataset](#7-dataset)
+- 8. [Conclusion](#8-conclusion)
 
 ## Project Overview
 
